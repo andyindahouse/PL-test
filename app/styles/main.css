@@ -1,0 +1,150 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+Note: any .css or .scss files included in the 'styles' directory
+will be correctly compiled during `gulp serve` and `gulp`
+ */
+
+html, body {
+  font-family: serif;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+.icon-calendar {        
+  content: url("../images/assets/calendar.png");
+}
+
+.icon-check {
+  content: url("../images/assets/check.png");
+}
+
+.icon-box {
+  content: url("../images/assets/box.png");
+}
+
+.icon-credit-card-1 {
+  content: url("../images/assets/credit-card-1.png");
+}
+
+.icon-credit-card-2 {
+  content: url("../images/assets/credit-card-2.png");       
+}
+
+.icon-credit-card-3 {
+  content: url("../images/assets/credit-card-3.png");
+}
+
+.icon-drop-off {
+  content: url("../images/assets/icon-drop-off.png");        
+}
+
+.main {
+  margin: 0 auto;                
+  width: 1200px;
+}
+
+
+.menu {}
+.menu__logo {}
+.menu__label {}
+.menu__label--second {}
+
+
+.header {}
+
+.price-group {
+
+}
+
+.price {
+  
+}
+.price__number {
+  font-size: 26px;   
+  font-weight: 800;
+}
+.price__tax {
+  font-size: 11px;
+}
+
+.button {
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 20px;        
+  font-size: 17px;
+}
+
+.button--state-action {
+  background-color: orange;
+  color: white;
+}
+
+.logo {        
+  background-color: lightslategrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;     
+  height: 180px;
+}
+.logo__image {
+  width: 50px;
+}
+.logo__label {
+  margin-top: 10px;
+}
+
+.calendary-info {
+  border: 1px solid red;
+  max-width: 500px;  
+  display: flex;  
+}
+
+.calendary-info__icon-group {
+  position: relative;
+}
+
+.calendary-info__icon {
+  width: 40px;
+}
+.calendary-info__day {
+  font-size: 18px;
+  position: absolute;
+  color: blue;
+  top: 18px;
+  left: 9px;
+}
+
+.calendary-info__labels-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.calendary-info__label {
+  
+}
+.calendary-info__label--second {}
+.calendary-info__hour {}
+
+
+.footer-options {}
+.footer-options__label {}
+.footer-options__label--link {}
+.footer-options__icon {}
