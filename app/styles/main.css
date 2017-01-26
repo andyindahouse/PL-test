@@ -58,6 +58,10 @@ html, body {
   content: url("../images/assets/note.png");
 }
 
+.icon_expand {
+  content: url("../images/assets/expand_white.png");
+}
+
 .main {
   margin: 0 auto;                
   max-width: 1200px;
@@ -68,6 +72,56 @@ html, body {
 .menu__logo {}
 .menu__label {}
 .menu__label--second {}
+
+.menu__packet-group {
+  background-color: lightblue;
+  display: flex;
+  align-items: center; 
+  max-width: 120px; 
+}
+.menu__packet-icon {
+  border: 1px solid red;
+  width: 40px;  
+}
+.menu__packet-number {
+  color: white;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.menu__labels-group {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;    
+}
+
+.menu__label {
+  color: white;
+  font-weight: 600;
+}
+
+.menu__label--second {
+  color: lightslategrey;
+  font-weight: 600;
+}
+
+.menu__arrow-icon {
+  width: 20px;
+  transform: rotate(270deg);
+}
+
+.menu__site-shipping {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: lightblue;
+  max-width: 400px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+
+
 
 
 .header {}
