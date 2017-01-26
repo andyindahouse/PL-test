@@ -51,12 +51,16 @@ html, body {
 }
 
 .icon-drop-off {
-  content: url("../images/assets/icon-drop-off.png");        
+  content: url("../images/assets/icon-drop-off.png");
+}
+
+.icon_note {
+  content: url("../images/assets/note.png");
 }
 
 .main {
   margin: 0 auto;                
-  width: 1200px;
+  max-width: 1200px;
 }
 
 
@@ -68,12 +72,12 @@ html, body {
 
 .header {}
 
-.price-group {
-
+.price__group {
+  border: 1px solid red;
 }
 
 .price {
-  
+
 }
 .price__number {
   font-size: 26px;   
@@ -113,8 +117,16 @@ html, body {
 
 .calendary-info {
   border: 1px solid red;
-  max-width: 500px;  
+  max-width: 300px;  
   display: flex;  
+}
+
+.calendary-info--right {
+  margin-left: 50px;
+}
+
+.calendary-info--left {
+  margin-right: 50px;
 }
 
 .calendary-info__icon-group {
@@ -134,17 +146,68 @@ html, body {
 
 .calendary-info__labels-group {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   margin-left: 10px;
 }
-.calendary-info__label {
-  
+
+.calendary-info__labels-group--center {
+  margin: 0 auto;
 }
-.calendary-info__label--second {}
-.calendary-info__hour {}
+
+.calendary-info__label {
+ font-size: 17px; 
+}
+.calendary-info__label--second {
+  font-size: 14px;
+  color: lightslategrey;
+}
+
+.calendary-info__hour {
+  font-size: 30px;
+}
 
 
-.footer-options {}
-.footer-options__label {}
-.footer-options__label--link {}
-.footer-options__icon {}
+.footer-options {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid red;
+}
+
+.footer-options__icon-label-group {
+  border: 1px solid red;
+  display: flex;    
+  align-items: center;
+  max-width: 200px;
+  margin-left: 50px;
+}
+.footer-options__label--link {
+    align-self: center;
+    flex: 1;
+    text-align: right;
+    border: 1px solid red;
+    margin-right: 50px; 
+}
+.footer-options__label {
+  font-size: 14px;
+}
+.footer-options__icon {
+  width: 20px;
+}
+
+.site-service {
+  margin: 0 auto;
+  border: 1px solid red;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;  
+  max-width: 900px;    
+}
+
+.site-service__main {  
+  border: 1px solid red;
+  display: flex;
+  align-items: center;  
+}
