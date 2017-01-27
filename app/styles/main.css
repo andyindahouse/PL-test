@@ -68,10 +68,35 @@ html, body {
 }
 
 
-.menu {}
-.menu__logo {}
-.menu__label {}
-.menu__label--second {}
+.menu {
+  background-color: lightblue;  
+}
+
+.menu__nav {
+  margin: 0 auto;                
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.menu__logo {
+  width: 120px;
+  padding: 20px;
+}
+
+.menu__label-language {
+  text-decoration: none;
+  color: white;
+}
+
+.menu__labels-language-group {
+  color: white;
+  background-color: lightblue;
+  border: 1px solid red;
+  flex: 1;
+  text-align: right;
+  margin-right: 10px;
+}
 
 .menu__packet-group {
   background-color: lightblue;
@@ -92,7 +117,8 @@ html, body {
 .menu__labels-group {
   background-color: lightblue;
   display: flex;
-  flex-direction: column;    
+  flex-direction: column; 
+  border: 1px solid red;  
 }
 
 .menu__label {
@@ -107,17 +133,19 @@ html, body {
 
 .menu__arrow-icon {
   width: 20px;
-  transform: rotate(270deg);
+  color: white;  
 }
 
 .menu__site-shipping {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: space-around;
   background-color: lightblue;
   max-width: 400px;
   border-left: 1px solid white;
   border-right: 1px solid white;
+  align-self: stretch;
 }
 
 
@@ -264,4 +292,41 @@ html, body {
   border: 1px solid red;
   display: flex;
   align-items: center;  
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+.footer__label {
+  font-size: 11px;
+}
+.footer__label-link {
+  text-decoration: none;  
+  color: deepskyblue;
+}
+.footer__label-cards {
+  font-size: 17px;
+  border: 1px solid red;
+  
+}
+.footer__card-icon-1 {
+  width: 50px;
+}
+
+.footer__card-icon-2 {
+  width: 44px;
+}
+
+.footer__card-icon-3 {
+  width: 40px;
+}
+
+.footer__cards-group {
+  
+}
+
+.footer__cards {
+  border: 1px solid red;
+  
 }
