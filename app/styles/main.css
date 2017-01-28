@@ -19,6 +19,7 @@ Note: any .css or .scss files included in the 'styles' directory
 will be correctly compiled during `gulp serve` and `gulp`
  */
 
+
 html, body {
   font-family: serif;
   font-size: 17px;
@@ -62,9 +63,51 @@ html, body {
   content: url("../images/assets/expand_white.png");
 }
 
-.main {
+
+/* ------- */
+
+.header-layout {
+  background-color: lightblue;  
+}
+
+.footer-layout {
+  border-top: 2px lightblue solid;
+}
+
+
+.main-layout {
   margin: 0 auto;                
   max-width: 1200px;
+}
+
+.main-layout__content {
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+
+.site-header {
+  display: flex;
+  position: relative;
+}
+
+.site-header__title {
+  font-size: 45px;
+}
+
+.site-header__labels-group {  
+  flex: 1;
+  align-self: flex-end;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-end;
+  color: lightslategrey;
+}
+
+.site-header__label-link {
+  text-decoration: none;  
+  color: deepskyblue;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 
@@ -92,7 +135,6 @@ html, body {
 .menu__labels-language-group {
   color: white;
   background-color: lightblue;
-  border: 1px solid red;
   flex: 1;
   text-align: right;
   margin-right: 10px;
@@ -105,7 +147,6 @@ html, body {
   max-width: 120px; 
 }
 .menu__packet-icon {
-  border: 1px solid red;
   width: 40px;  
 }
 .menu__packet-number {
@@ -118,7 +159,7 @@ html, body {
   background-color: lightblue;
   display: flex;
   flex-direction: column; 
-  border: 1px solid red;  
+  margin-left: 10px;
 }
 
 .menu__label {
@@ -144,26 +185,19 @@ html, body {
   background-color: lightblue;
   max-width: 400px;
   border-left: 1px solid white;
+  padding-left: 20px;
+  padding-right: 20px;
   border-right: 1px solid white;
   align-self: stretch;
 }
 
-
-
-
-
-.header {}
-
 .price__group {
-  border: 1px solid red;
+  margin-right: 20px;
 }
 
-.price {
-
-}
 .price__number {
-  font-size: 26px;   
-  font-weight: 800;
+  font-size: 35px;   
+  font-weight: 600;
 }
 .price__tax {
   font-size: 11px;
@@ -172,8 +206,8 @@ html, body {
 .button {
   border: 0;
   border-radius: 5px;
-  padding: 10px 20px;        
-  font-size: 17px;
+  padding: 10px 38px;        
+  font-size: 18px;
 }
 
 .button--state-action {
@@ -182,7 +216,7 @@ html, body {
 }
 
 .logo {        
-  background-color: lightslategrey;
+  background-color: ghostwhite;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,7 +232,6 @@ html, body {
 }
 
 .calendary-info {
-  border: 1px solid red;
   max-width: 300px;  
   display: flex;  
 }
@@ -254,11 +287,10 @@ html, body {
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid red;
+  background: lightcyan;
 }
 
 .footer-options__icon-label-group {
-  border: 1px solid red;
   display: flex;    
   align-items: center;
   max-width: 200px;
@@ -268,7 +300,8 @@ html, body {
     align-self: center;
     flex: 1;
     text-align: right;
-    border: 1px solid red;
+    text-decoration: none;
+    color: deepskyblue;  
     margin-right: 50px; 
 }
 .footer-options__label {
@@ -280,16 +313,16 @@ html, body {
 
 .site-service {
   margin: 0 auto;
-  border: 1px solid red;
+  border: 1px solid lightblue;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;  
-  max-width: 900px;    
+  max-width: 1200px; 
+  margin-bottom: 30px;   
 }
 
 .site-service__main {  
-  border: 1px solid red;
   display: flex;
   align-items: center;  
 }
@@ -297,6 +330,10 @@ html, body {
 .footer {
   display: flex;
   align-items: center;
+  position: relative;
+  margin: 0 auto;                
+  max-width: 1200px;
+  justify-content: space-around;
 }
 .footer__label {
   font-size: 11px;
@@ -306,9 +343,8 @@ html, body {
   color: deepskyblue;
 }
 .footer__label-cards {
-  font-size: 17px;
-  border: 1px solid red;
-  
+  font-size: 14px;
+  display: block;  
 }
 .footer__card-icon-1 {
   width: 50px;
@@ -320,13 +356,4 @@ html, body {
 
 .footer__card-icon-3 {
   width: 40px;
-}
-
-.footer__cards-group {
-  
-}
-
-.footer__cards {
-  border: 1px solid red;
-  
 }
