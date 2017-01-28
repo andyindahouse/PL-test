@@ -42,7 +42,7 @@
 
 
   </head>
-  <body class="">
+  <body ng-app="myApp">
 
 
     <div class="header-layout">
@@ -86,7 +86,7 @@
       </div>
     </div>
 
-    <main class="main-layout">
+    <main class="main-layout" ng-controller="ShippingCtrl as vm">
 
       <article class="main-layout__content">
         <div class="site-header">
@@ -343,6 +343,11 @@
 
     <!-- build:js scripts/main.min.js -->
     <script src="scripts/main.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/shipping/shipping.controller.js"></script>
+    <script src="scripts/shipping/shipping.service.js"></script>
+
     <!-- endbuild -->
 
 
