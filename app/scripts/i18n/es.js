@@ -1,0 +1,3 @@
+const esLang = {
+    'test': 'prueba'
+};

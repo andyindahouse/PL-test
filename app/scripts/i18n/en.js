@@ -1,0 +1,3 @@
+const enLang = {
+    'test': 'test'
+};

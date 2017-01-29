@@ -43,10 +43,10 @@
 
   </head>
   <body ng-app="myApp">
+    
 
-
-    <div class="header-layout">
-      <div class="menu">
+    <div class="header-layout" >
+      <header ng-controller="HeaderCtrl as vm" class="menu">
         <nav class="menu__nav">
           
           <img class="menu__logo" src="images/assets/packlink.png" alt=""/>
@@ -73,24 +73,24 @@
           </div>
 
           <span class="menu__labels-language-group">
-            <a class="menu__label-language" href="#">
+            <a class="menu__label-language" href="#" ng-click="vm.changeLang('enLang')">
               EN
             </a>
             |
-            <a class="menu__label-language" href="#">  
+            <a class="menu__label-language" href="#" ng-click="vm.changeLang('esLang')">  
               ES      
             </a>
           </span>
 
         </nav>
-      </div>
+      </header>
     </div>
 
-    <main class="main-layout" ng-controller="ShippingCtrl as vm">
+    <main class="main-layout" >
 
-      <article class="main-layout__content">
+      <article ng-controller="ShippingCtrl as vm" class="main-layout__content">
         <div class="site-header">
-          <h2 class="site-header__title"> Select a service</h2>
+          <h2 class="site-header__title"> {{ 'test' | translate}}</h2>          
           <span class="site-header__labels-group">
             Order by: 
             <a class="site-header__label-link"> Best price first </a>
@@ -345,9 +345,19 @@
     <script src="scripts/main.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/i18n/es.js"></script>
+    <script src="scripts/i18n/en.js"></script>
+    <script src="scripts/i18n/i18n.js"></script>
+    <script src="scripts/i18n/translate.filter.js"></script>
+    
+    
+    
+
     <script src="scripts/shipping/shipping.controller.js"></script>
     <script src="scripts/shipping/shipping.service.js"></script>
 
+    <script src="scripts/header/header.controller.js"></script>
+    
     <!-- endbuild -->
 
 

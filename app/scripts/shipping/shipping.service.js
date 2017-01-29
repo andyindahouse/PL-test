@@ -7,17 +7,15 @@ shipping.$inject = ['$q'];
 function shipping($q) {
 
     const api = {
-        getShippings: getShippings
+        getAll
     };
     
     return api;
 
-    function getShippings(){
-
+    function getAll(){
         return $q(function(resolve, reject){
             setTimeout(() => resolve(response), 1000);
         });
-
     }
 }
 

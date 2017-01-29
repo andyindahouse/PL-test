@@ -6,12 +6,12 @@ app.controller('ShippingCtrl', ShippingCtrl)
 ShippingCtrl.$inject = ['shipping'];
 
 function ShippingCtrl(shipping){
-
-    shipping.getShippings().then(response => {
-        console.log(response);
-    });
-
     
+    const vm = this;    
+
+    shipping.getAll().then(response => {
+        console.log(response);
+    });    
 }
 
 })(app);
