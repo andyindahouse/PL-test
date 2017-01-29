@@ -68,8 +68,8 @@
           </div>
 
           <div class="menu__labels-group">
-            <span class="menu__label">Please select a service below to</span>
-            <span class="menu__label--second">get your discounted price!</span> 
+            <span class="menu__label"> {{ 'PleaseSelectServiceBelow' | translate }} </span>
+            <span class="menu__label--second"> {{ 'getYourDiscountedPrice' | translate }} </span> 
           </div>
 
           <span class="menu__labels-language-group">
@@ -90,40 +90,58 @@
 
       <article ng-controller="ShippingCtrl as vm" class="main-layout__content">
         <div class="site-header">
-          <h2 class="site-header__title"> {{ 'test' | translate}}</h2>          
+          <h2 class="site-header__title"> {{ 'selectService' | translate}}</h2>       
           <span class="site-header__labels-group">
-            Order by: 
-            <a class="site-header__label-link"> Best price first </a>
+            {{ 'OrderBy' | translate }}: 
+            <a class="site-header__label-link" 
+                href="#" 
+                ng-click="vm.sortBy('price')" 
+                ng-disabled="vm.loading"> 
+                {{ 'BestPriceFirst' | translate }} 
+            </a>
               | 
-            <a class="site-header__label-link"> Shorter transit time first </a>
+            <a class="site-header__label-link" 
+                href="#"
+                ng-click="vm.sortBy('time')" 
+                ng-disabled="vm.loading"> 
+                {{ 'ShorterTimeFirst' | translate }} 
+            </a>
           </span>
         </div>
 
-        <section class="site-service">
+        <p ng-show="vm.loading"> Cargando...</p>
+
+        <section class="site-service" 
+                  ng-show="!vm.loading" 
+                  ng-repeat="service in vm.services">
 
           <div class="site-service__main">
+
             <div class="logo">
               <img id="logo" class="logo__image" src="images/assets/ups.png" alt=""/>
-              <strong class="logo__label" for="logo"> UPS Standard</strong>
+              <strong class="logo__label" for="logo"> {{ service.carrier }}</strong>
             </div>
+
             <div class="calendary-info calendary-info--right">
               <div class="calendary-info__icon-group">
                 <span class=" calendary-info__icon icon-calendar"></span>          
                 <span class="calendary-info__day">07</span>  
               </div>
               <div class="calendary-info__labels-group">
-                <span class="calendary-info__label"> Pick up at home/offices</span>
+                <span class="calendary-info__label"> {{ service.from.text }}</span>
                 <span class="calendary-info__label calendary-info__label--second">
-                  During morning: 8:00 to 14:00
-                </span>        
+                  {{ service.from.time }}
+                </span>   
               </div>
             </div>
+
             <div class="calendary-info__labels-group calendary-info__labels-group--center">
-              <span class="calendary-info__hour">48h </span>
+              <span class="calendary-info__hour"> {{ service.transit_hours }}h </span>
               <span class="calendary-info__label calendary-info__label--second">
-                estimated
-              </span>        
+                {{ 'estimated' | translate }}
+              </span>
             </div>
+
             <div class="calendary-info calendary-info--left">
               <div class="calendary-info__icon-group">
                 <span class=" calendary-info__icon icon-calendar"></span>          
@@ -138,185 +156,31 @@
             </div>
             <div class="price__group">        
               <div class="price">
-                <span class="price__number"> 3,50€ </span>
+                <span class="price__number"> {{ service.price.total_price }}€ </span>
                 <span class="price__tax"> Inkl. MwSt.</span>
               </div>
               <button class="button button--state-action">
-                  Select this
+                  {{ 'selectThis' | translate}}
               </button>
             </div>          
           </div>
 
           <footer class="footer-options">
 
-            <div class="footer-options__icon-label-group">
+            <div class="footer-options__icon-label-group" ng-repeat="info in service.service_info">
               <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
+              <div class="footer-options__label"> {{ info.text }}</div>
             </div>
-
-            <div class="footer-options__icon-label-group">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
-            </div>
-
-            <div class="footer-options__icon-label-group">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
-            </div>
-
+            
             <a class="footer-options__label footer-options__label--link" href="">
-              Full details
+              {{ 'fullDetails' | translate}}
             </a>
 
           </footer>  
 
         </section>
 
-        <section class="site-service">
 
-          <div class="site-service__main">
-            <div class="logo">
-              <img id="logo" class="logo__image" src="images/assets/ups.png" alt=""/>
-              <strong class="logo__label" for="logo"> UPS Standard</strong>
-            </div>
-            <div class="calendary-info calendary-info--right">
-              <div class="calendary-info__icon-group">
-                <span class=" calendary-info__icon icon-calendar"></span>          
-                <span class="calendary-info__day">07</span>  
-              </div>
-              <div class="calendary-info__labels-group">
-                <span class="calendary-info__label"> Pick up at home/offices</span>
-                <span class="calendary-info__label calendary-info__label--second">
-                  During morning: 8:00 to 14:00
-                </span>        
-              </div>
-            </div>
-            <div class="calendary-info__labels-group calendary-info__labels-group--center">
-              <span class="calendary-info__hour">48h </span>
-              <span class="calendary-info__label calendary-info__label--second">
-                estimated
-              </span>        
-            </div>
-            <div class="calendary-info calendary-info--left">
-              <div class="calendary-info__icon-group">
-                <span class=" calendary-info__icon icon-calendar"></span>          
-                <span class="calendary-info__day">07</span>  
-              </div>
-              <div class="calendary-info__labels-group">
-                <span class="calendary-info__label"> Pick up at home/offices</span>
-                <span class="calendary-info__label calendary-info__label--second">
-                  During morning: 8:00 to 14:00
-                </span>        
-              </div>
-            </div>
-            <div class="price__group">        
-              <div class="price">
-                <span class="price__number"> 3,50€ </span>
-                <span class="price__tax"> Inkl. MwSt.</span>
-              </div>
-              <button class="button button--state-action">
-                  Select this
-              </button>
-            </div>          
-          </div>
-
-          <footer class="footer-options">
-
-            <div class="footer-options__icon-label-group">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
-            </div>
-
-            <div class="footer-options__icon-label-group">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
-            </div>
-
-            <div class="footer-options__icon-label-group">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
-            </div>
-
-            <a class="footer-options__label footer-options__label--link" href="">
-              Full details
-            </a>
-
-          </footer>  
-
-        </section>  
-
-        <section class="site-service">
-
-          <div class="site-service__main">
-            <div class="logo">
-              <img id="logo" class="logo__image" src="images/assets/ups.png" alt=""/>
-              <strong class="logo__label" for="logo"> UPS Standard</strong>
-            </div>
-            <div class="calendary-info calendary-info--right">
-              <div class="calendary-info__icon-group">
-                <span class=" calendary-info__icon icon-calendar"></span>          
-                <span class="calendary-info__day">07</span>  
-              </div>
-              <div class="calendary-info__labels-group">
-                <span class="calendary-info__label"> Pick up at home/offices</span>
-                <span class="calendary-info__label calendary-info__label--second">
-                  During morning: 8:00 to 14:00
-                </span>        
-              </div>
-            </div>
-            <div class="calendary-info__labels-group calendary-info__labels-group--center">
-              <span class="calendary-info__hour">48h </span>
-              <span class="calendary-info__label calendary-info__label--second">
-                estimated
-              </span>        
-            </div>
-            <div class="calendary-info calendary-info--left">
-              <div class="calendary-info__icon-group">
-                <span class=" calendary-info__icon icon-calendar"></span>          
-                <span class="calendary-info__day">07</span>  
-              </div>
-              <div class="calendary-info__labels-group">
-                <span class="calendary-info__label"> Pick up at home/offices</span>
-                <span class="calendary-info__label calendary-info__label--second">
-                  During morning: 8:00 to 14:00
-                </span>        
-              </div>
-            </div>
-            <div class="price__group">        
-              <div class="price">
-                <span class="price__number"> 3,50€ </span>
-                <span class="price__tax"> Inkl. MwSt.</span>
-              </div>
-              <button class="button button--state-action">
-                  Select this
-              </button>
-            </div>          
-          </div>
-
-          <footer class="footer-options">
-
-            <div class="footer-options__icon-label-group">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
-            </div>
-
-            <div class="footer-options__icon-label-group">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
-            </div>
-
-            <div class="footer-options__icon-label-group">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> Printer required</div>
-            </div>
-
-            <a class="footer-options__label footer-options__label--link" href="">
-              Full details
-            </a>
-
-          </footer>  
-
-        </section>
       </article>
 
 
@@ -328,7 +192,7 @@
           &#xa9; 2016 PackLink.es - todos los derechos reservados - Have a look at our <a class="footer__label-link" href="">terms and conditions</a>, our <a class="footer__label-link" href=""> privacy policy </a> and our <a class="footer__label-link" href="">cookies policy</a>.
         </span>
         <span class="footer__cards-group">        
-          <span class="footer__label-cards">SECURE PAYMENT GUARANTEED</span>
+          <span class="footer__label-cards"> {{ 'securePaymentGuaranteed' | translate }} </span>
           <div class="footer__cards">
             <span class="icon-credit-card-1 footer__card-icon-1"></span>
             <span class="icon-credit-card-2 footer__card-icon-2"></span>
