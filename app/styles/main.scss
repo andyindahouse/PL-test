@@ -19,10 +19,18 @@ Note: any .css or .scss files included in the 'styles' directory
 will be correctly compiled during `gulp serve` and `gulp`
  */
 
+$main-color: #3F698B;
+$secondary-color: #D6E8F8;
+$call-to-action: #FF8E2D;
+$main-label: #FFFFFF;
+$secondary-label: #8AA6BF;
+$link-label: #009DE5;
+$background-logo: #EDF3FC;
 
 html, body {
   font-family: serif;
   font-size: 17px;
+  color: $main-color;
   margin: 0;
   padding: 0;
 }
@@ -63,15 +71,10 @@ html, body {
   content: url("../images/assets/expand_white.png");
 }
 
-
 /* ------- */
 
-.header-layout {
-  background-color: lightblue;  
-}
-
 .footer-layout {
-  border-top: 2px lightblue solid;
+  border-top: 2px $secondary-color solid;
 }
 
 
@@ -100,19 +103,20 @@ html, body {
   margin-bottom: 40px;
   display: flex;
   justify-content: flex-end;
-  color: lightslategrey;
+  color: $secondary-label;
+  font-weight: 600;
 }
 
 .site-header__label-link {
   text-decoration: none;  
-  color: deepskyblue;
+  color: $link-label;
   margin-left: 4px;
   margin-right: 4px;
 }
 
 
 .menu {
-  background-color: lightblue;  
+  background-color: $main-color;  
 }
 
 .menu__nav {
@@ -129,19 +133,17 @@ html, body {
 
 .menu__label-language {
   text-decoration: none;
-  color: white;
+  color: $main-label;
 }
 
 .menu__labels-language-group {
-  color: white;
-  background-color: lightblue;
+  color: $main-label;
   flex: 1;
   text-align: right;
   margin-right: 10px;
 }
 
 .menu__packet-group {
-  background-color: lightblue;
   display: flex;
   align-items: center; 
   max-width: 120px; 
@@ -150,31 +152,30 @@ html, body {
   width: 40px;  
 }
 .menu__packet-number {
-  color: white;
+  color: $main-label;
   font-weight: 600;
   margin-left: 10px;
 }
 
 .menu__labels-group {
-  background-color: lightblue;
   display: flex;
   flex-direction: column; 
   margin-left: 10px;
 }
 
 .menu__label {
-  color: white;
+  color: $main-label;
   font-weight: 600;
 }
 
 .menu__label--second {
-  color: lightslategrey;
+  color: $secondary-label;
   font-weight: 600;
 }
 
 .menu__arrow-icon {
   width: 20px;
-  color: white;  
+  color: $main-label;  
 }
 
 .menu__site-shipping {
@@ -182,12 +183,11 @@ html, body {
   flex: 1;
   align-items: center;
   justify-content: space-around;
-  background-color: lightblue;
   max-width: 400px;
-  border-left: 1px solid white;
+  border-left: 1px dashed $secondary-label;
   padding-left: 20px;
   padding-right: 20px;
-  border-right: 1px solid white;
+  border-right: 1px dashed $secondary-label;
   align-self: stretch;
 }
 
@@ -211,12 +211,12 @@ html, body {
 }
 
 .button--state-action {
-  background-color: orange;
-  color: white;
+  background-color: $call-to-action;
+  color: $main-label;
 }
 
 .logo {        
-  background-color: ghostwhite;
+  background-color: $background-logo;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -254,7 +254,7 @@ html, body {
 .calendary-info__day {
   font-size: 18px;
   position: absolute;
-  color: blue;
+  color: $main-color;
   top: 18px;
   left: 9px;
 }
@@ -275,7 +275,7 @@ html, body {
 }
 .calendary-info__label--second {
   font-size: 14px;
-  color: lightslategrey;
+  color: $secondary-label;
 }
 
 .calendary-info__hour {
@@ -287,7 +287,7 @@ html, body {
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: lightcyan;
+  background: $secondary-color;
 }
 
 .footer-options__icon-label-group {
@@ -301,7 +301,7 @@ html, body {
     flex: 1;
     text-align: right;
     text-decoration: none;
-    color: deepskyblue;  
+    color: $link-label;  
     margin-right: 50px; 
 }
 .footer-options__label {
@@ -313,7 +313,7 @@ html, body {
 
 .site-service {
   margin: 0 auto;
-  border: 1px solid lightblue;
+  border: 1px solid $secondary-color;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -340,7 +340,7 @@ html, body {
 }
 .footer__label-link {
   text-decoration: none;  
-  color: deepskyblue;
+  color: $link-label;
 }
 .footer__label-cards {
   font-size: 14px;
