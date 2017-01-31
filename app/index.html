@@ -88,101 +88,7 @@
 
     <main class="main-layout" >
 
-      <article ng-controller="ShippingCtrl as vm" class="main-layout__content">
-        <div class="site-header">
-          <h2 class="site-header__title"> {{ 'selectService' | translate}}</h2>       
-          <span class="site-header__labels-group">
-            {{ 'OrderBy' | translate }}: 
-            <a class="site-header__label-link" 
-                href="#" 
-                ng-click="vm.sortBy('price')" 
-                ng-disabled="vm.loading"> 
-                {{ 'BestPriceFirst' | translate }} 
-            </a>
-              | 
-            <a class="site-header__label-link" 
-                href="#"
-                ng-click="vm.sortBy('time')" 
-                ng-disabled="vm.loading"> 
-                {{ 'ShorterTimeFirst' | translate }} 
-            </a>
-          </span>
-        </div>
-
-        <p ng-show="vm.loading"> Cargando...</p>
-
-        <section class="site-service" 
-                  ng-show="!vm.loading" 
-                  ng-repeat="service in vm.services">
-
-          <div class="site-service__main">
-
-            <div class="logo">
-              <img id="logo" class="logo__image" src="images/assets/ups.png" alt=""/>
-              <strong class="logo__label" for="logo"> {{ service.carrier }}</strong>
-            </div>
-
-            <div class="calendary-info calendary-info--right">
-              <div class="calendary-info__icon-group">
-                <span class=" calendary-info__icon icon-calendar"></span>          
-                <span class="calendary-info__day">07</span>  
-              </div>
-              <div class="calendary-info__labels-group">
-                <span class="calendary-info__label"> {{ service.from.text }}</span>
-                <span class="calendary-info__label calendary-info__label--second">
-                  {{ service.from.time }}
-                </span>   
-              </div>
-            </div>
-
-            <div class="calendary-info__labels-group calendary-info__labels-group--center">
-              <span class="calendary-info__hour"> {{ service.transit_hours }}h </span>
-              <span class="calendary-info__label calendary-info__label--second">
-                {{ 'estimated' | translate }}
-              </span>
-            </div>
-
-            <div class="calendary-info calendary-info--left">
-              <div class="calendary-info__icon-group">
-                <span class=" calendary-info__icon icon-calendar"></span>          
-                <span class="calendary-info__day">07</span>  
-              </div>
-              <div class="calendary-info__labels-group">
-                <span class="calendary-info__label"> Pick up at home/offices</span>
-                <span class="calendary-info__label calendary-info__label--second">
-                  During morning: 8:00 to 14:00
-                </span>        
-              </div>
-            </div>
-            <div class="price__group">        
-              <div class="price">
-                <span class="price__number"> {{ service.price.total_price }}€ </span>
-                <span class="price__tax"> Inkl. MwSt.</span>
-              </div>
-              <button class="button button--state-action">
-                  {{ 'selectThis' | translate}}
-              </button>
-            </div>          
-          </div>
-
-          <footer class="footer-options">
-
-            <div class="footer-options__icon-label-group" ng-repeat="info in service.service_info">
-              <div class="footer-options__icon icon_note"></div>
-              <div class="footer-options__label"> {{ info.text }}</div>
-            </div>
-            
-            <a class="footer-options__label footer-options__label--link" href="">
-              {{ 'fullDetails' | translate}}
-            </a>
-
-          </footer>  
-
-        </section>
-
-
-      </article>
-
+      <service-list></service-list>
 
     </main>
 
@@ -213,15 +119,11 @@
     <script src="scripts/i18n/en.js"></script>
     <script src="scripts/i18n/i18n.js"></script>
     <script src="scripts/i18n/translate.filter.js"></script>
-    
-    
-    
-
-    <script src="scripts/shipping/shipping.controller.js"></script>
-    <script src="scripts/shipping/shipping.service.js"></script>
-
     <script src="scripts/header/header.controller.js"></script>
     
+    <script src="scripts/service-list/service-list.component.js"></script>
+    <script src="scripts/service-list/service-list.service.js"></script>
+    <script src="scripts/service-detail/service-detail.component.js"></script>    
     <!-- endbuild -->
 
 

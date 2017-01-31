@@ -2,9 +2,9 @@
   "name": "angular-web-starter-kit",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "^1.6.1"
+    "angular": "^1.6.1",
+    "angular-mocks": "^1.6.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "appPath": "app"
 }

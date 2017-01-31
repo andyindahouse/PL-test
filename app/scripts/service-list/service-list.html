@@ -1,0 +1,29 @@
+<article class="main-layout__content">
+  <div class="site-header">
+    <h2 class="site-header__title"> {{ 'selectService' | translate}}</h2>       
+    <span class="site-header__labels-group">
+      {{ 'OrderBy' | translate }}: 
+      <a class="site-header__label-link" 
+          href="#" 
+          ng-click="$ctrl.sortBy('price')" 
+          ng-disabled="$ctrl.loading"> 
+          {{ 'BestPriceFirst' | translate }} 
+      </a>
+        | 
+      <a class="site-header__label-link" 
+          href="#"
+          ng-click="$ctrl.sortBy('time')" 
+          ng-disabled="$ctrl.loading"> 
+          {{ 'ShorterTimeFirst' | translate }} 
+      </a>
+    </span>
+  </div>
+
+  <p ng-show="$ctrl.loading"> Cargando...</p>
+
+  <service-detail ng-show="!$ctrl.loading"
+                  ng-repeat="service in $ctrl.services"
+                  service="service"
+                  on-select="$ctrl.selectService(service)">
+  </service-detail>
+</article>

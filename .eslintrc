@@ -1,0 +1,36 @@
+{
+	"rules": {
+		//"camelcase": 1,
+		"no-unused-vars": 1,
+		"curly": 1,
+		"quotes": 0,
+    "linebreak-style": 0,
+    "indent": 0,
+    "no-trailing-spaces": 0,
+    "space-before-blocks": 0,
+    "require-jsdoc": 0,
+    "padded-blocks": 0,
+    "quote-props": 0,
+    "eol-last": 0
+	},
+	
+	"globals": {
+    "i18n": true,
+    "esLang": true,
+    "enLang": true,
+		"$": true,
+		"angular": true,
+		"app": true,
+		"_": true,
+    "describe": true,
+    "expect": true,
+    "beforeEach": true,
+    "it": true,
+    "inject": true
+	},
+		
+	"env": {
+		"browser": "true"
+	}
+
+}

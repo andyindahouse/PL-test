@@ -1,0 +1,66 @@
+<section class="site-service">
+
+  <div class="site-service__main">
+
+    <div class="logo">
+      <img id="logo" class="logo__image" src="images/assets/ups.png" alt=""/>
+      <strong class="logo__label" for="logo"> {{ $ctrl.service.carrier }}</strong>
+    </div>
+
+    <div class="calendary-info calendary-info--right">
+      <div class="calendary-info__icon-group">
+        <span class=" calendary-info__icon icon-calendar"></span>          
+        <span class="calendary-info__day">07</span>  
+      </div>
+      <div class="calendary-info__labels-group">
+        <span class="calendary-info__label"> {{ $ctrl.service.from.text }}</span>
+        <span class="calendary-info__label calendary-info__label--second">
+          {{ $ctrl.service.from.time }}
+        </span>   
+      </div>
+    </div>
+
+    <div class="calendary-info__labels-group calendary-info__labels-group--center">
+      <span class="calendary-info__hour"> {{ $ctrl.service.transit_hours }}h </span>
+      <span class="calendary-info__label calendary-info__label--second">
+        {{ 'estimated' | translate }}
+      </span>
+    </div>
+
+    <div class="calendary-info calendary-info--left">
+      <div class="calendary-info__icon-group">
+        <span class=" calendary-info__icon icon-calendar"></span>          
+        <span class="calendary-info__day">07</span>  
+      </div>
+      <div class="calendary-info__labels-group">
+        <span class="calendary-info__label"> Pick up at home/offices</span>
+        <span class="calendary-info__label calendary-info__label--second">
+          During morning: 8:00 to 14:00
+        </span>        
+      </div>
+    </div>
+    <div class="price__group">        
+      <div class="price">
+        <span class="price__number"> {{ $ctrl.service.price.total_price }}€ </span>
+        <span class="price__tax"> Inkl. MwSt.</span>
+      </div>
+      <button class="button button--state-action" ng-click="$ctrl.select()">
+          {{ 'selectThis' | translate}}
+      </button>
+    </div>          
+  </div>
+
+  <footer class="footer-options">
+
+    <div class="footer-options__icon-label-group" ng-repeat="info in $ctrl.service.service_info">
+      <div class="footer-options__icon icon_note"></div>
+      <div class="footer-options__label"> {{ info.text }}</div>
+    </div>
+    
+    <a class="footer-options__label footer-options__label--link" href="">
+      {{ 'fullDetails' | translate}}
+    </a>
+
+  </footer>  
+
+</section>

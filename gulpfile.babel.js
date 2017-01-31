@@ -33,9 +33,21 @@ import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
+import karma from 'karma'
+
+
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+const Server = karma.Server;
+
+// Run test with karma
+gulp.task('karma', (done) => {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
 
 // Lint JavaScript
 gulp.task('lint', () =>
@@ -110,8 +122,18 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      './app/scripts/main.js'
+      './app/scripts/main.js',
       // Other scripts
+      './app/bower_components/angular/angular.min.js',
+      './app/scripts/app.js',
+      './app/scripts/i18n/es.js',
+      './app/scripts/i18n/en.js',
+      './app/scripts/i18n/i18n.js',
+      './app/scripts/i18n/translate.filter.js',
+      './app/scripts/header/header.controller.js',
+      './app/scripts/service-list/service-list.component.js',
+      './app/scripts/service-list/service-list.service.js',
+      './app/scripts/service-detail/service-detail.component.js'  
     ])
       .pipe($.newer('.tmp/scripts'))
       .pipe($.sourcemaps.init())
@@ -173,7 +195,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts', reload]);
+  gulp.watch(['app/scripts/**/*.js'], ['scripts', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });
 
@@ -196,8 +218,9 @@ gulp.task('serve:dist', ['default'], () =>
 // Build production files, the default task
 gulp.task('default', ['clean'], cb =>
   runSequence(
+    'karma',
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['scripts', 'html', 'images', 'copy'],
     'generate-service-worker',
     cb
   )
